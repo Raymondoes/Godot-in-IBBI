@@ -1,0 +1,231 @@
+[gd_scene format=3 uid="uid://csg5crn0ktmd5"]
+
+[ext_resource type="Script" uid="uid://b0cpjqwxteimk" path="res://blackout.gd" id="1_wq72o"]
+[ext_resource type="Script" uid="uid://dyarjdu1odm53" path="res://heat.gd" id="2_5o8pu"]
+[ext_resource type="PackedScene" uid="uid://eerioxvih2x6" path="res://barrier.tscn" id="3_doh4h"]
+[ext_resource type="Script" uid="uid://b87588bpb7f81" path="res://energy.gd" id="3_nn3gh"]
+[ext_resource type="Texture2D" uid="uid://caq27w3uaqf6f" path="res://api.png" id="5_1kcl0"]
+[ext_resource type="Script" uid="uid://cyfgopqbur6te" path="res://box_2d.gd" id="5_bd13e"]
+[ext_resource type="PackedScene" uid="uid://c440xx7dgowgw" path="res://bg-snow-sounds.tscn" id="5_gi4f8"]
+[ext_resource type="Texture2D" uid="uid://dchjchr4dljsx" path="res://BEKGRON-14fa.png" id="5_hgv7g"]
+[ext_resource type="Texture2D" uid="uid://c6u5okgmbtdqp" path="res://Tanpa Judul 6-1108-1196.png" id="5_werhl"]
+[ext_resource type="PackedScene" uid="uid://b1nqrr60k1yg2" path="res://player.tscn" id="6_1kcl0"]
+[ext_resource type="Texture2D" uid="uid://5jxf76ce5pua" path="res://apiiii-d792.png" id="6_gi4f8"]
+[ext_resource type="Texture2D" uid="uid://c34udud6xnbbb" path="res://Tanpa Judul 2-d5ed-d75d.png" id="7_237ru"]
+[ext_resource type="Texture2D" uid="uid://xcpqcvi3q0v3" path="res://tungku aseli-0238.png" id="8_5o8pu"]
+[ext_resource type="Script" uid="uid://bdqlr6iccybmo" path="res://tungku_aseli_0238.gd" id="8_w2wmw"]
+[ext_resource type="Script" uid="uid://c8tbmx6xs5by4" path="res://node_2d.gd" id="8_wcsf0"]
+[ext_resource type="Script" uid="uid://cn8lwkueatlaq" path="res://node_2d_2.gd" id="11_irsrf"]
+[ext_resource type="Script" uid="uid://bkl5pf7l1rkk" path="res://area_2d.gd" id="11_wdeix"]
+[ext_resource type="Texture2D" uid="uid://b56bhkkh8nved" path="res://generator .png" id="13_6fqxd"]
+[ext_resource type="Texture2D" uid="uid://chweicprvw0f8" path="res://pintu buka.png" id="13_hj75i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2wmw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_werhl")
+}],
+"loop": 1,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_5o8pu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_werhl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Theme" id="Theme_n6e77"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_237ru"]
+bg_color = Color(0.9349397, 0.43434608, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1kcl0"]
+bg_color = Color(0.93340063, 0.7655011, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2ycef"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_5o8pu")
+}],
+"loop": 1,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_werhl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ycef"]
+size = Vector2(43.656116, 50.82352)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7kjhr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_237ru")
+}],
+"loop": 1,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_hj75i")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_1kcl0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_atjkf"]
+font = SubResource("FontVariation_1kcl0")
+font_size = 26
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7kjhr"]
+radius = 70.5762
+
+[node name="Bunker" type="Node2D" unique_id=507327550]
+script = ExtResource("1_wq72o")
+
+[node name="Bekgron14Fa" type="Sprite2D" parent="." unique_id=858201214]
+position = Vector2(573, 316)
+scale = Vector2(1.79375, 1.7888887)
+texture = ExtResource("5_hgv7g")
+
+[node name="Node2D" parent="Bekgron14Fa" unique_id=207355081 instance=ExtResource("3_doh4h")]
+position = Vector2(-471.63763, -557.3292)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Bekgron14Fa/Node2D" unique_id=503024881]
+sprite_frames = SubResource("SpriteFrames_w2wmw")
+animation = &"dead"
+
+[node name="HEAT" type="ProgressBar" parent="." unique_id=663470140]
+offset_left = 250.0
+offset_top = 14.0
+offset_right = 425.0
+offset_bottom = 41.0
+theme = SubResource("Theme_n6e77")
+theme_override_styles/fill = SubResource("StyleBoxFlat_237ru")
+value = 100.0
+script = ExtResource("2_5o8pu")
+
+[node name="ENERGY" type="ProgressBar" parent="." unique_id=1181238922]
+offset_left = 539.0
+offset_top = 15.0
+offset_right = 714.0
+offset_bottom = 42.0
+theme = SubResource("Theme_n6e77")
+theme_override_styles/fill = SubResource("StyleBoxFlat_1kcl0")
+value = 100.0
+script = ExtResource("3_nn3gh")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1702464035]
+script = ExtResource("8_wcsf0")
+
+[node name="Area2D" type="Area2D" parent="Node2D" unique_id=107705024]
+script = ExtResource("11_wdeix")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D/Area2D" unique_id=34309079]
+position = Vector2(444.99997, 309.99997)
+scale = Vector2(4.604167, 4.604167)
+sprite_frames = SubResource("SpriteFrames_2ycef")
+script = ExtResource("8_w2wmw")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Node2D/Area2D/AnimatedSprite2D" unique_id=298438874]
+
+[node name="Timer" type="Timer" parent="Node2D/Area2D/AnimatedSprite2D" unique_id=208699788]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/Area2D" unique_id=272259694]
+position = Vector2(455.49994, 306.00006)
+scale = Vector2(4.604168, 4.604168)
+shape = SubResource("RectangleShape2D_2ycef")
+
+[node name="Node2D2" type="Node2D" parent="." unique_id=746066795]
+script = ExtResource("11_irsrf")
+
+[node name="Area2D" type="Area2D" parent="Node2D2" unique_id=550439130]
+script = ExtResource("11_wdeix")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D2/Area2D" unique_id=995997102]
+position = Vector2(1002, 290.3333)
+scale = Vector2(2.624999, 2.8083334)
+sprite_frames = SubResource("SpriteFrames_7kjhr")
+animation = &"dead"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/Area2D" unique_id=617072306]
+position = Vector2(455.49994, 306.00006)
+scale = Vector2(4.604168, 4.604168)
+shape = SubResource("RectangleShape2D_2ycef")
+
+[node name="Timer" type="Timer" parent="." unique_id=224681242]
+
+[node name="Label" type="Label" parent="." unique_id=565878624]
+offset_left = 1063.0
+offset_top = 12.0
+offset_right = 1135.0
+offset_bottom = 54.0
+text = "00:00"
+label_settings = SubResource("LabelSettings_atjkf")
+
+[node name="Box2D" type="Node2D" parent="." unique_id=646082799]
+script = ExtResource("5_bd13e")
+
+[node name="Sprite2D" type="Sprite2D" parent="Box2D" unique_id=59493897]
+
+[node name="Area2D" type="Area2D" parent="Box2D/Sprite2D" unique_id=1052856252]
+
+[node name="Timer" type="Timer" parent="Box2D/Sprite2D/Area2D" unique_id=731499731]
+
+[node name="Generator" type="Sprite2D" parent="." unique_id=393685518]
+position = Vector2(732, 380)
+scale = Vector2(2.1640625, 2.1640625)
+texture = ExtResource("13_6fqxd")
+
+[node name="Api" type="Sprite2D" parent="." unique_id=1375018856]
+position = Vector2(515, 27)
+texture = ExtResource("5_1kcl0")
+
+[node name="ApiiiiD792" type="Sprite2D" parent="." unique_id=1943777037]
+position = Vector2(227, 25)
+texture = ExtResource("6_gi4f8")
+
+[node name="AudioStreamPlayer2D" parent="." unique_id=692627659 instance=ExtResource("5_gi4f8")]
+
+[node name="player" parent="." unique_id=957676699 instance=ExtResource("6_1kcl0")]
+position = Vector2(433, 381)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=623297312]
+script = ExtResource("11_wdeix")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=83532057]
+position = Vector2(1005, 311)
+shape = SubResource("CircleShape2D_7kjhr")
+
+[connection signal="changed" from="HEAT" to="HEAT" method="_on_changed"]
+[connection signal="ready" from="HEAT" to="." method="_on_heat_ready"]
+[connection signal="value_changed" from="HEAT" to="HEAT" method="_on_value_changed"]
+[connection signal="changed" from="ENERGY" to="." method="_on_energy_changed"]
+[connection signal="changed" from="ENERGY" to="ENERGY" method="_on_changed"]
+[connection signal="input_event" from="Node2D/Area2D" to="Node2D/Area2D" method="_on_input_event"]
+[connection signal="input_event" from="Node2D2/Area2D" to="Node2D2/Area2D" method="_on_input_event"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="input_event" from="Box2D/Sprite2D/Area2D" to="Box2D" method="_on_area_2d_input_event"]
+[connection signal="ready" from="Box2D/Sprite2D/Area2D/Timer" to="Box2D" method="_on_timer_ready"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

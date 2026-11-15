@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bpj5crjy8awdk"]
+
+[ext_resource type="Texture2D" uid="uid://cyb0j3tu2ai7x" path="res://SawnicSprite.png" id="1_s8pwu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cqb71"]
+atlas = ExtResource("1_s8pwu")
+region = Rect2(0, 0, 50, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0qkc"]
+atlas = ExtResource("1_s8pwu")
+region = Rect2(50, 0, 50, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fua3x"]
+atlas = ExtResource("1_s8pwu")
+region = Rect2(100, 0, 50, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x5lwf"]
+atlas = ExtResource("1_s8pwu")
+region = Rect2(150, 0, 50, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5krs"]
+atlas = ExtResource("1_s8pwu")
+region = Rect2(200, 0, 50, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m600r"]
+atlas = ExtResource("1_s8pwu")
+region = Rect2(250, 0, 50, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_abohb"]
+atlas = ExtResource("1_s8pwu")
+region = Rect2(300, 0, 50, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kct5"]
+atlas = ExtResource("1_s8pwu")
+region = Rect2(350, 0, 50, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7kjhr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cqb71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0qkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fua3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x5lwf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5krs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m600r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_abohb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2kct5")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1736521553]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=557520306]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1155299532]
+sprite_frames = SubResource("SpriteFrames_7kjhr")
+animation = &"Idle"
+frame_progress = 0.6973127

@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://p0yvh0sfqw4h"]
+
+[ext_resource type="FontFile" uid="uid://cdeqw2ej5ojh8" path="res://digital-7 (mono).ttf" id="1_cjnew"]
+[ext_resource type="Script" uid="uid://5io3atf7nrqy" path="res://titlescreen.gd" id="1_goadl"]
+[ext_resource type="Texture2D" uid="uid://doq3u6w745fh" path="res://Tanpa Judul 6-14c8-156c.png" id="2_2bjoa"]
+
+[sub_resource type="SystemFont" id="SystemFont_3iyju"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_7kjhr"]
+font = SubResource("SystemFont_3iyju")
+font_size = 50
+font_color = Color(0.54600954, 0.9999997, 0.9083461, 1)
+outline_size = 5
+outline_color = Color(0, 0.7791421, 0.7791419, 1)
+shadow_color = Color(1.1551381e-06, 0.8291161, 0.925973, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2ycef"]
+bg_color = Color(0.60038817, 0.60038817, 0.60038817, 0)
+
+[node name="TitleScreen" type="Control" unique_id=2145769740]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_goadl")
+
+[node name="TanpaJudul614c8156c" type="Sprite2D" parent="." unique_id=2122466090]
+position = Vector2(575, 321.99997)
+scale = Vector2(1.796875, 1.8055555)
+texture = ExtResource("2_2bjoa")
+
+[node name="Label" type="Label" parent="." unique_id=1085211247]
+layout_mode = 0
+offset_left = 279.0
+offset_top = 58.0
+offset_right = 880.3169
+offset_bottom = 199.0
+text = "BLACKOUT
+BUNKER (DEMO)"
+label_settings = SubResource("LabelSettings_7kjhr")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Start" type="Button" parent="." unique_id=653106488]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 226.0
+offset_right = 690.87897
+offset_bottom = 307.63934
+theme_override_colors/font_color = Color(0.62282324, 0.93324876, 0.99999994, 1)
+theme_override_fonts/font = ExtResource("1_cjnew")
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ycef")
+text = "START GAME"
+
+[node name="Start" type="Button" parent="Start" unique_id=952266774]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 81.0
+offset_right = 246.87897
+offset_bottom = 162.63934
+theme_override_colors/font_color = Color(0.62282324, 0.93324876, 0.99999994, 1)
+theme_override_fonts/font = ExtResource("1_cjnew")
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ycef")
+text = "Settings"
+
+[node name="Exit" type="Button" parent="." unique_id=2068939278]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 390.0
+offset_right = 690.87897
+offset_bottom = 471.63934
+theme_override_colors/font_color = Color(0.62282324, 0.93324876, 0.99999994, 1)
+theme_override_fonts/font = ExtResource("1_cjnew")
+theme_override_font_sizes/font_size = 43
+theme_override_styles/normal = SubResource("StyleBoxFlat_2ycef")
+text = "Exit"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dgc0k8p0q2w53"]
+
+[ext_resource type="Script" uid="uid://7ev1qcnwh2ek" path="res://furnace_component.gd" id="1_xcsxo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ycef"]
+size = Vector2(94, 90)
+
+[node name="FurnaceComponent" type="CharacterBody2D" unique_id=1016479589]
+script = ExtResource("1_xcsxo")
+
+[node name="InteractRange" type="Area2D" parent="." unique_id=1495618343]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange" unique_id=152258670]
+position = Vector2(3, 1)
+shape = SubResource("RectangleShape2D_2ycef")
+
+[node name="InteractLabel" type="Label" parent="." unique_id=260129769]
+offset_left = -4.0
+offset_top = -19.0
+offset_right = 4.0
+offset_bottom = -2.0
+size_flags_horizontal = 4
+text = "X"
+
+[connection signal="ready" from="InteractRange/CollisionShape2D" to="." method="_on_collision_shape_2d_ready"]
